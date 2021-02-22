@@ -11,7 +11,16 @@ namespace CPW212_UnitTestStarterCode.Tests
     [TestClass()]
     public class SimpleMathTests
     {
+        private SimpleMath simpleMath;
+
+        [TestInitialize]
+        public void Object()
+        {
+            simpleMath = new SimpleMath();
+        }
+
         [TestMethod()]
+        [TestCategory("Add")]
         [DataRow(5, 10)]
         [DataRow(0, 100)]
         [DataRow(-1, -10)]
@@ -19,21 +28,24 @@ namespace CPW212_UnitTestStarterCode.Tests
         public void Add_TwoNumbers_ReturnsSum(double num1, double num2)
         {
             // Use the DataRow values to test the Add method
-            // Arrange
-            SimpleMath simpleMath = new SimpleMath();
-
-            // Act
-            simpleMath.Add(num1, num2);
-
-            // Assert
-            Assert.IsNotNull(num1 + num2);
+            double sum = num1 + num2;
+            double sum2 = simpleMath.Add(num1, num2);
+            Assert.AreEqual(sum, sum2);
         }
 
         [TestMethod]
-        public void Multiply_TwoNumbers_ReturnsProduct()
+        [TestCategory("Multiply")]
+        [DataRow(5, 10)]
+        [DataRow(10, -5)]
+        [DataRow(-5, -2.2)]
+        [DataRow(0, -0)]
+        [DataRow(-2.4, 7.8)]
+        public void Multiply_TwoNumbers_ReturnsProduct(double num1, double num2)
         {
             // Use a few pairs of values to test the Multiply method
-            Assert.Fail();
+            double product = num1 * num2;
+            double product2 = simpleMath.Multiply(num1, num2);
+            Assert.AreEqual(product, product2);
         }
 
         [TestMethod]
