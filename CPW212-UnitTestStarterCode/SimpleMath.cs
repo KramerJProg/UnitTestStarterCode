@@ -34,6 +34,10 @@ namespace CPW212_UnitTestStarterCode
         public double Divide(double a, double b)
         {
             double quotient = a / b;
+            if (b == 0)
+            {
+                throw new DivideByZeroException("Denominator cannot be zero!");
+            }
             return quotient;
         }
     }
