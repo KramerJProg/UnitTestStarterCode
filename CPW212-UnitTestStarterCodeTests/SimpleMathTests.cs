@@ -19,7 +19,14 @@ namespace CPW212_UnitTestStarterCode.Tests
         public void Add_TwoNumbers_ReturnsSum(double num1, double num2)
         {
             // Use the DataRow values to test the Add method
-            Assert.Fail();
+            // Arrange
+            SimpleMath simpleMath = new SimpleMath();
+
+            // Act
+            simpleMath.Add(num1, num2);
+
+            // Assert
+            Assert.IsNotNull(num1 + num2);
         }
 
         [TestMethod]
