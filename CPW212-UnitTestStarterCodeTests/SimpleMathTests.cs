@@ -58,10 +58,17 @@ namespace CPW212_UnitTestStarterCode.Tests
             Assert.ThrowsException<DivideByZeroException>(() => simpleMath.Divide(num1, num2));
         }
 
-        // TODO: Test Divide method with two valid numbers
-        //double quotient = num1 / num2;
-        //double quotient2 = simpleMath.Divide(num1, num2);
-        //Assert.AreEqual(quotient, quotient2);
+        [TestMethod]
+        [DataRow(5, 10)]
+        [DataRow(10, -5)]
+        [DataRow(-5, -2.2)]
+        [DataRow(-2.4, 7.8)]
+        public void Divide_TwoNumbers_ReturnsQuotient(double num1, double num2)
+        {
+            double quotient = num1 / num2;
+            double quotient2 = simpleMath.Divide(num1, num2);
+            Assert.AreEqual(quotient, quotient2);
+        }
 
         // TODO: Test subtract method with two valid numbers
     }
