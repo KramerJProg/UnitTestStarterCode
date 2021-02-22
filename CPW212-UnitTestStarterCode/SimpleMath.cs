@@ -6,11 +6,6 @@ using System.Threading.Tasks;
 
 namespace CPW212_UnitTestStarterCode
 {
-    /*****************************************************************************
-     * 
-     * YOU MAY REFACTOR THE PARAMETER NAMES BUT DO NOT CHANGE THE METHOD SIGNATURES
-     * 
-     * ***************************************************************************/
     public class SimpleMath
     {
         public double Add(double a, double b)
